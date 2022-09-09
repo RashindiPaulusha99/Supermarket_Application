@@ -1,9 +1,9 @@
 # *About* ❓
-**This is my First Database Programming Project**.
+**This is my first Project made by Layered Architecture**.
 
 <h3 align="center"><a href="https://git.io/typing-svg" align="center"><img align="center" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=4000&center=true&vCenter=true&width=435&lines=Super+Market+System" alt="Typing SVG" style="max-width:100%" /></a></h3>
 
-![park](src/assets/dash.png)
+![park](src/assets/SuperMarket.png)
 
 # *Introduction* 📝
 A wholesale distributor distributes goods for their retail clients(customer). The company has a huge stock and
