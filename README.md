@@ -16,7 +16,7 @@ seasons. Seasonal trends are most important for the company when the new supplie
 
 wholesale distributor company wants to do that process quickly by software application. Therefore this project is the standalone application created to demonstrate this process using Layered Architecture and connecting Database to store data.
 
-# Objectives
+# Objectives 🔑
 * JavaFX application development
 * Database connectivity
 * Software architectures and design patterns
