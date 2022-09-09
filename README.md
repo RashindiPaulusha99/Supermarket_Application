@@ -28,10 +28,10 @@ wholesale distributor company wants to do that process quickly by software appli
 # *System Requirements* 📞
 1. Add new customers.
 2. Add new items.
-1. Customer place their orders to the cashier (list of items)
-2. Cashier send the orders to the stores and store will prepare a list of goods and send them back to the cashier.
-3. Cashier creates the final bill of the order according to the items received from the stores.
-4. Customer pays the amount in full.
+3. Customer place their orders to the cashier (list of items)
+4. Cashier send the orders to the stores and store will prepare a list of goods and send them back to the cashier.
+5. Cashier creates the final bill of the order according to the items received from the stores.
+6. Customer pays the amount in full.
 
 # *Details* 🔖
 Below you can see the languages architectures, tools I used  the project.
