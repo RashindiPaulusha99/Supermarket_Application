@@ -40,7 +40,9 @@ Below you can see the languages architectures, tools I used  the project.
 * Layered 
 
 ## Design Patterns
-* Singleton 
+* Singleton
+* Facade
+* Strategy
 
 ## Language
 * Java - JavaFX
