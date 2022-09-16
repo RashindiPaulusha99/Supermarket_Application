@@ -12,12 +12,12 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     @Override
     public boolean add(OrderDetail temp) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("INSERT INTO `Order Detail` VALUES(?,?,?,?,?)", temp.getItemCode(), temp.getOrderId(), temp.getQty(), temp.getPrice(), temp.getAmount());
+        return CrudUtil.executeUpdate("INSERT INTO `orderdetail` VALUES(?,?,?,?,?)", temp.getItemCode(), temp.getOrderId(), temp.getQty(), temp.getPrice(), temp.getAmount());
     }
 
     @Override
     public boolean update(OrderDetail temp) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("UPDATE `Order Detail` SET qty=?, price=?, amount=? WHERE orderId=? AND itemCode=?",
+        return CrudUtil.executeUpdate("UPDATE `orderdetail` SET qty=?, price=?, amount=? WHERE orderId=? AND itemCode=?",
                 temp.getQty(), temp.getPrice(), temp.getAmount(), temp.getOrderId(), temp.getItemCode());
     }
 
@@ -38,7 +38,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     @Override
     public ArrayList<OrderDetail> searchOrderDetails(String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `order detail` WHERE orderId=?", id);
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `orderdetail` WHERE orderId=?", id);
         ArrayList<OrderDetail> item = new ArrayList<>();
         while (rst.next()){
             item.add(new OrderDetail(
@@ -54,12 +54,12 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     @Override
     public boolean deleteOrderDetail(String oid, String code) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("DELETE FROM `order detail` WHERE orderId=? AND itemCode=?", oid, code);
+        return CrudUtil.executeUpdate("DELETE FROM `orderdetail` WHERE orderId=? AND itemCode=?", oid, code);
     }
 
     @Override
     public String mostMovableItems() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT itemCode ,COUNT(qty) FROM `order detail` GROUP BY (itemCode) ORDER BY qty DESC LIMIT 1");
+        ResultSet rst = CrudUtil.executeQuery("SELECT itemCode ,COUNT(qty) FROM `orderdetail` GROUP BY (itemCode) ORDER BY qty DESC LIMIT 1");
         if (rst.next()){
             return rst.getString(1);
         }
@@ -68,7 +68,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     @Override
     public String leastMovableItems() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT itemCode ,COUNT(qty) FROM `order detail` GROUP BY (itemCode) ORDER BY qty ASC LIMIT 1");
+        ResultSet rst = CrudUtil.executeQuery("SELECT itemCode ,COUNT(qty) FROM `orderdetail` GROUP BY (itemCode) ORDER BY qty ASC LIMIT 1");
         if (rst.next()){
             return rst.getString(1);
         }

@@ -67,7 +67,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
                 throwables.printStackTrace();
             }
         }
-        return false;
+        return true;
     }
 
     public boolean saveOrderDetails(OrderDTO orderDTO) throws SQLException, ClassNotFoundException {
@@ -79,7 +79,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
             if(ifOrderDetailSaved){
 
                 if (updateQty(temp.getItemCode(),temp.getSellQty())){
-
+                    return true;
                 }else {
                     return false;
                 }
@@ -144,7 +144,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
             if(ifOrderDetailsUpdated){
 
                 if (updateQty(temp.getItemCode(),temp.getSellQty())){
-
+                    return true;
                 }else {
                     return false;
                 }
@@ -201,7 +201,7 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
         if(ifDeletedOrderDetail){
 
             if (updateQtyByDeleting(items.get(0).getSellQty(),code)) {
-
+                return true;
             }else {
                 return false;
             }
@@ -209,7 +209,6 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
         }else {
             return false;
         }
-        return true;
     }
 
     public  boolean updateQtyByDeleting(int sellQty, String itemCode) throws SQLException, ClassNotFoundException {
